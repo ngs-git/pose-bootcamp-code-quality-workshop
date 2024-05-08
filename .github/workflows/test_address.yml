@@ -19,13 +19,12 @@ jobs:
 
       - name: create folder
         run: mkdir build
-            cd ./build
 
       - name: build cmake
         run: cmake -S . -B build
 
       - name: build
-        run: cmake --build build -j
+        run: cmake --build build
 
       - name: Run Unit Tests  # Run unit tests using Maven
         run: ./build/address_book_test
