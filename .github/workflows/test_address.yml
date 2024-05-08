@@ -5,8 +5,17 @@ on:
   pull_request:
 
 jobs:
-  hello:
+  compile:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello
-        run: echo Hello
+
+      - uses: actions/checkout@v4  # Check out the repository
+
+      - name: get CMake
+        run:
+          git submodule update --init
+          cmake -S . -B build
+          cmake --build build -j
+
+      - name: Run Unit Tests  # Run unit tests using Maven
+        run: ./build/address_book_test
