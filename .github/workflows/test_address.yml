@@ -1,10 +1,12 @@
-name: “unit testing"
+name: unit testing
+
 on:
   push:
   pull_request:
+
 jobs:
-  print hello:
+  print_hello:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello
-      run: echo Hello
+        run: echo "Hello"
