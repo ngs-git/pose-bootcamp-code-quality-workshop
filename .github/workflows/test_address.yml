@@ -27,4 +27,4 @@ jobs:
         run: cmake --build build
 
       - name: Run Unit Tests  # Run unit tests using Maven
-        run: ./build/address_book_test
+        run: ./build/address_book_tests
