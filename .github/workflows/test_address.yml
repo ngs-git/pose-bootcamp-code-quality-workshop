@@ -10,7 +10,8 @@ jobs:
     steps:
 
       - uses: actions/checkout@v4  # Check out the repository
-
+      - uses: lukka/get-cmake@3.29.3
+      
       - name: get CMake
         run:
           git submodule update --init
