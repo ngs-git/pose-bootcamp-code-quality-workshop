@@ -15,7 +15,7 @@ jobs:
           submodules: true
 
       - name: get cmake
-        uses: lukka/get-cmake@3.29.3
+        uses: lukka/get-cmake@v3.29.3
 
       - name: build cmake
         run: cmake -S . -B build
