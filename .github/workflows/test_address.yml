@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  print_hello:
+  hello:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello
