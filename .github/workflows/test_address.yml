@@ -9,16 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v4  # Check out the repository
-      
+      - name: checkout repo
+        uses: actions/checkout@v4  # Check out the repository
+        with: 
+          submodules: true
+
       - name: get cmake
         uses: lukka/get-cmake@3.29.3
 
       - name: build cmake
-        run:
-          git submodule update --init
-          cmake -S . -B build
-          cmake --build build -j
+        run: cmake -S . -B build
+
+      - name: build
+        run: cmake --build build -j
 
       - name: Run Unit Tests  # Run unit tests using Maven
         run: ./build/address_book_test
