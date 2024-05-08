@@ -17,6 +17,9 @@ jobs:
       - name: get cmake
         uses: lukka/get-cmake@v3.29.3
 
+      - name: create folder
+        run: mkdir build
+
       - name: build cmake
         run: cmake -S . -B build
 
